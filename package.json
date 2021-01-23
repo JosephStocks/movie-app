@@ -1,5 +1,25 @@
 {
+  "name": "movie-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephStocks/movie-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephStocks/movie-app/issues"
+  },
+  "homepage": "https://github.com/JosephStocks/movie-app#readme",
+  "description": "",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cookie-session": "^1.4.0",
     "ejs": "^3.1.5",

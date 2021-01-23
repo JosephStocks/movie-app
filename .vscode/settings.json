@@ -1,0 +1,32 @@
+{
+    // "html.format.enable": true,
+    // "html.format.unformatted": "wbr,%",
+
+    // "files.associations": {
+    //     "*.ejs": "html"
+    // },
+    // "[ejs]": {
+    //     "editor.formatOnSave": false
+    // },
+    // "emmet.includeLanguages": {
+    //     "ejs": "html"
+    // },
+    "[html]": {
+
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    "css.validate": false,
+    "html.validate.styles": false,
+    "liveServer.settings.ignoreFiles": [
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.ts",
+        "**/*.json"
+    ],
+    "editor.quickSuggestions": {
+        "strings": true
+      }
+}
