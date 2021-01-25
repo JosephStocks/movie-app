@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .flip-card {
+        perspective: 1000px;
+        /* Below if for click effect - will animate with JS; for hover add 'group' */
+        @apply bg-transparent group;
+    }
+
+    .flip-card-inner {
+        transform-style: preserve-3d;
+        /* Below is for click effect - will animate with JS; for hover add 'group-hover:rotate3d-180' */
+        @apply relative w-full h-full transition-all duration-300;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        backface-visibility: hidden;
+        @apply absolute w-full h-full;
+    }
+
+    .flip-card-front {
+        @apply bg-trueGray-400 text-black;
+    }
+
+    .flip-card-back {
+        @apply rotate3d-180 text-white bg-lightBlue-800;
+    }
+}
+
+@layer utilities {
+    @variants group-hover, hover, focus {
+        .rotate3d-180 {
+            transform: rotateY(180deg);
+        }
+        .rotate3d-05 {
+            transform: rotateY(5deg);
+        }
+        .rotate3d-10 {
+            transform: rotateY(10deg);
+        }
+        .rotate3d-15 {
+            transform: rotateY(15deg);
+        }
+        .rotate3d-20 {
+            transform: rotateY(20deg);
+        }
+        .rotate3d-25 {
+            transform: rotateY(25deg);
+        }
+        .rotate3d-30 {
+            transform: rotateY(30deg);
+        }
+    }
+}
