@@ -5,6 +5,10 @@
 // the movie database:
 // multi-search: https://api.themoviedb.org/3/search/multi?api_key=ecb83265a11cb5ea5791bd8dd62a6f21&language=en-US&query=jon+favreau&page=1&include_adult=false
 // movie search: https://api.themoviedb.org/3/search/movie?api_key=ecb83265a11cb5ea5791bd8dd62a6f21&language=en-US&query=the+matrix&page=1&include_adult=false
+// -----  image comes from response.results.poster_path or .backdrop_path
+// Images: https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg OR
+// https://image.tmdb.org/t/p/original/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
+// Get movie details: https://api.themoviedb.org/3/movie/605?api_key=ecb83265a11cb5ea5791bd8dd62a6f21&language=en-US
 
 const axios = require("axios");
 
