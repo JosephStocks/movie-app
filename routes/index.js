@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 
 router.get("/", (req, res) => {
-    res.render("index-flipcards");
+    res.render("index");
 });
 
 module.exports = router;
