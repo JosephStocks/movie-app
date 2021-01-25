@@ -1,16 +1,6 @@
 const colors = require("tailwindcss/colors");
 const plugin = require("tailwindcss/plugin");
 
-const checkedSiblingPlugin = plugin(function ({ addVariant, e }) {
-    addVariant("checked-sibling", ({ container }) => {
-        container.walkRules((rule) => {
-            rule.selector = `:checked + .checked-sibling\\:${rule.selector.slice(
-                1
-            )}`;
-        });
-    });
-});
-
 module.exports = {
     purge: [],
     darkMode: false, // or 'media' or 'class'
@@ -62,12 +52,8 @@ module.exports = {
     },
     variants: {
         extend: {
-            backgroundColor: ["checked", "checked-sibling"],
-            borderColor: ["checked", "checked-sibling"],
-            textDecoration: ["checked", "checked-sibling"],
             cursor: ["group-hover", "hover", "focus"],
             outline: ["focus"],
-            transitionProperty: ["hover", "focus"],
         },
         textOpacity: [
             "responsive",
@@ -77,8 +63,6 @@ module.exports = {
             "focus-within",
             "hover",
             "focus",
-            "checked",
-            "checked-sibling",
         ],
         opacity: [
             "responsive",
@@ -88,14 +72,11 @@ module.exports = {
             "focus-within",
             "hover",
             "focus",
-            "checked",
-            "checked-sibling",
         ],
     },
     plugins: [
         require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
-        checkedSiblingPlugin,
         require("tailwindcss-interaction-variants"),
     ],
 };
