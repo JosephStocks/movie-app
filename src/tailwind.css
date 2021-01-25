@@ -53,26 +53,5 @@
         .rotate3d-30 {
             transform: rotateY(30deg);
         }
-        .rotate3d-neg180 {
-            transform: rotateY(180deg);
-        }
-        .rotate3d-neg05 {
-            transform: rotateY(-5deg);
-        }
-        .rotate3d-neg10 {
-            transform: rotateY(-10deg);
-        }
-        .rotate3d-neg15 {
-            transform: rotateY(-15deg);
-        }
-        .rotate3d-neg20 {
-            transform: rotateY(-20deg);
-        }
-        .rotate3d-neg25 {
-            transform: rotateY(-25deg);
-        }
-        .rotate3d-neg30 {
-            transform: rotateY(-30deg);
-        }
     }
 }
