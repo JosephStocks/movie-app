@@ -6,7 +6,7 @@
     "css:build": "postcss src/tailwind.css -o public/css/tailwind.css"
   },
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "git+https://github.com/JosephStocks/movie-app.git"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "cookie-session": "^1.4.0",
+    "cookie-sessions": "0.0.2",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "helmet": "^4.4.1",
