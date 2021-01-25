@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/tailwind.css" />
+</head>
+
+<body class="bg-blueGray-900">
+    <div id="card-holder" class="container mx-auto grid grid-cols-5 gap-4 p-1">
+        <img class="block" src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt=""/>
+
+        <div class="flip-card group">
+            <div class="flip-card-inner">
+                <div class="flip-card-front group-hover:cursor-pointer group-hover:rotate3d-15 duration-500">
+                    <img class="block" src="https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg" alt=""/>
+                </div>
+                <div class="flip-card-back">
+                    <h1>Title</h1>
+                    <p>Architect & Engineer</p> 
+                    <p>We love that guy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/click-flipcards.js"></script>
+</body>
+</html>
