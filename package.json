@@ -4,9 +4,13 @@
   "main": "app.js",
   "scripts": {
     "css:build": "postcss src/tailwind.css -o public/css/tailwind.css"
+<<<<<<< HEAD
   },
+=======
+},
+>>>>>>> main
   "repository": {
-    "type": "git",
+    "type": "git", 
     "url": "git+https://github.com/JosephStocks/movie-app.git"
   },
   "keywords": [],
