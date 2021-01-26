@@ -16,12 +16,12 @@
                 <% if (isAuthenticated) { %>
                     <li><a id="loginButton" class="font-mono lg:p-4 py-3 px-0 block border-b-2 border-transparent text-white hover:border-indigo-400" href="/logout">Log Out</a></li>
                     
-                    <li>
-                        <button id="dropdownButton" class="dropdown bg-transparent text-white font-semibold py-2 px-4 rounded inline-flex items-center font-mono">
+                    <li class="group">
+                        <button id="dropdownButton" class="group-hover dropdown bg-transparent text-white font-semibold py-2 px-4 rounded inline-flex items-center font-mono">
                             <span class="mr-1">Profile</span>
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                         </button>
-                        <ul id="dropdownMenu" class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                        <ul id="dropdownMenu" class="group-hover hidden dropdown-menu absolute text-gray-700 pt-1">
                             <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
                             <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
                             <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Three is the magic number</a></li>
