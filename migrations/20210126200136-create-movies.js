@@ -12,7 +12,7 @@ module.exports = {
                 type: Sequelize.STRING,
             },
             year: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
             },
             synopsis: {
                 type: Sequelize.TEXT,
@@ -24,22 +24,25 @@ module.exports = {
                 type: Sequelize.STRING,
             },
             imdb_rating: {
-                type: Sequelize.STRING,
+                type: Sequelize.FLOAT,
             },
             rottentom_rating: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
             },
             metacritic_rating: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
             },
             boxoffice: {
-                type: Sequelize.STRING,
+                type: Sequelize.INTEGER,
             },
             poster_rel_url: {
                 type: Sequelize.STRING,
             },
             release_date: {
                 type: Sequelize.DATE,
+            },
+            imdbvotes: {
+                type: Sequelize.INTEGER,
             },
             // createdAt: {
             //   allowNull: false,
