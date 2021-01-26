@@ -12,17 +12,16 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/login", (req, res) => {
-    res.render("login");
-});
+router.get('/login', (req, res) => {
+    res.render('login')
+})
 
-router.post(
-    "/login",
-    passport.authenticate("local", {
-        successRedirect: "/",
-        failureRedirect: "/login",
-    })
-);
+
+router.post('/login', passport.authenticate('local', { 
+    successRedirect: '/', 
+    failureRedirect: '/login'
+    
+}))
 
 router.get("/logout", function (req, res) {
     req.logout();
