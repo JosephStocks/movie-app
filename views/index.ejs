@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,58 +7,67 @@
         <link rel="stylesheet" href="/css/tailwind.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
-    </head>
-
+    </head> -->
+    
     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Movie Matrix</title>
-    <link rel="stylesheet" href="css/tailwind.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
-</head>
-<body class="bg-black">
-
-    <header class="lg:px-16 px-6 bg-black flex flex-wrap items-center lg:py-0 py-2">
-        <div class="flex-1 flex justify-between items-center">
-            <a href="#">
-                <img style="height: 100px;" src="images/projector.png" alt="">
-                <p class="font-mono text-white">The Movie Matrix</p>
-            </a>
-        </div>
-    
-        <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><title>menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></label>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>The Movie Matrix</title>
+            <link rel="stylesheet" href="css/tailwind.css">
+            <link rel="stylesheet" href="css/main.css">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
+        </head>
+        <body class="bg-black">
+            
+            <header class="lg:px-16 px-6 bg-black flex flex-wrap items-center lg:py-0 py-2">
+                <div class="flex-1 flex justify-between items-center">
+                    <a href="#">
+                        <img style="height: 100px;" src="images/projector.png" alt="">
+                        <p class="font-mono text-white">The Movie Matrix</p>
+                    </a>
+                </div>
+                
+                <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><title>menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></label>
         <input class="hidden" type="checkbox" id="menu-toggle" />
-    
+        
         <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
-        <nav>
+            <nav>
             <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 ">
                 <li><a class="font-mono lg:p-4 py-3 px-0 block border-b-2 border-transparent text-white hover:border-indigo-400" href="#">The Team</a></li>
-                <li><a id="loginButton" class="font-mono lg:p-4 py-3 px-0 block border-b-2 border-transparent text-white hover:border-indigo-400" href="#">Log In</a></li>
-                <li>
-                    <button id="dropdownButton" class="dropdown bg-transparent text-white font-semibold py-2 px-4 rounded inline-flex items-center font-mono">
-                        <span class="mr-1">Profile</span>
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                    </button>
-                    <ul id="dropdownMenu" class="dropdown-menu absolute hidden text-gray-700 pt-1">
-                        <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
-                        <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
-                        <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Three is the magic number</a></li>
-                    </ul>
-                </li>
+                <% if (isAuthenticated) { %>
+                    <li><a id="loginButton" class="font-mono lg:p-4 py-3 px-0 block border-b-2 border-transparent text-white hover:border-indigo-400" href="/logout">Log Out</a></li>
+                    
+                    <li>
+                        <button id="dropdownButton" class="dropdown bg-transparent text-white font-semibold py-2 px-4 rounded inline-flex items-center font-mono">
+                            <span class="mr-1">Profile</span>
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                        </button>
+                        <ul id="dropdownMenu" class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                            <li class=""><a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">One</a></li>
+                            <li class=""><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Two</a></li>
+                            <li class=""><a class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Three is the magic number</a></li>
+                        </ul>
+                    </li>
+                
+                <% } else { %>  
+                
+                    <li><a id="loginButton" class="font-mono lg:p-4 py-3 px-0 block border-b-2 border-transparent text-white hover:border-indigo-400" href="/login">Log In</a></li>
+                    <li><a id="loginButton" class="font-mono lg:p-4 py-3 px-0 block border-b-2 border-transparent text-white hover:border-indigo-400" href="/Registration">Registration</a></li>
+                <% } %>
+                 
             </ul>
-    
+            
         </nav>
-    
-        </div>
-    
-    </header>
-    <div class="flex justify-center items-center">
-        <p class="font-mono text-indigo-900">Action Movies</p>
+        
     </div>
+    
+</header>
+<div class="flex justify-center items-center">
+    <p class="font-mono text-indigo-900">Action Movies</p>
+</div>
     <div class="grid grid-flow-col-dense p-3 bg-black overflow-scroll">
         <div class="container mx-auto bg-black py-10 px-5 flex justify-center items-center w-60">
             <button class="modal-open">
@@ -74,50 +83,50 @@
             </button>
         </div>
     </div>
-
-
+    
     <!--Modal-->
     <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
         
         <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-        
-        <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
-            <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            
+            <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
             </svg>
             <span class="text-sm">(Esc)</span>
         </div>
-
+        
         <!-- Add margin if you want to see some of the overlay behind the modal-->
         <div class="modal-content py-4 text-left px-6 font-mono">
             <!--Title-->
             <div class="flex justify-between items-center pb-3">
-            <p class="text-2xl font-bold ">The Matrix (1999)</p>
-            <div class="modal-close cursor-pointer z-50">
+                <p class="text-2xl font-bold ">The Matrix (1999)</p>
+                <div class="modal-close cursor-pointer z-50">
                 <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-                <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                 </svg>
             </div>
-            </div>
-
-            <!--Body-->
-            <div>Rated R</div><br>
-            <div>The Matrix is a 1999 American science fiction action film[3][4] written and directed by the Wachowskis,[a] and produced by Joel Silver. It stars Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano and is the first installment in the Matrix franchise. It depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, the Matrix, created by intelligent machines to distract humans while using their bodies as an energy source.</div><br>
-            <div>Rotten Tomatoes: 12/100</div>
-            <div>MetaCritic: 90/100</div>
-            <div>IMDB: 4/5</div>
-
-            <!--Footer-->
-            <div class="flex justify-end pt-2">
+        </div>
+        
+        <!--Body-->
+        <div>Rated R</div><br>
+        <div>The Matrix is a 1999 American science fiction action film[3][4] written and directed by the Wachowskis,[a] and produced by Joel Silver. It stars Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano and is the first installment in the Matrix franchise. It depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, the Matrix, created by intelligent machines to distract humans while using their bodies as an energy source.</div><br>
+        <div>Rotten Tomatoes: 12/100</div>
+        <div>MetaCritic: 90/100</div>
+        <div>IMDB: 4/5</div>
+        
+        <!--Footer-->
+        <div class="flex justify-end pt-2">
             <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add To Watchlist</button>
             <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Seen</button>
             <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Close</button>
-            </div> 
-        </div>
+        </div> 
     </div>
+</div>
 
-    <script src="../js/modal.js"></script>
-    <script src="../js/loginModal.js"></script>
+
+<script src="../js/modal.js"></script>
+<script src="../js/loginModal.js"></script>
 </body>
 </html>
