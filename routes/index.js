@@ -29,6 +29,7 @@ router.get("/logout", function (req, res) {
     res.redirect("/");
 });
 
+
 router.get("/team", (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     res.render("team", {
