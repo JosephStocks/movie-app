@@ -5,17 +5,37 @@ let passport = require('passport');
 const authReq = require('../auth');
 
 router.get("/", (req, res) => {
-    res.render("index");
+    const isAuthenticated = req.isAuthenticated();
+    res.render("index", {
+        isAuthenticated
+    });
 });
+
+router.get('/login', (req, res) => {
+    res.render('login')
+})
+
+
+router.post('/login', passport.authenticate('local', { 
+    successRedirect: '/', 
+    failureRedirect: '/login'
+
+}))
+
+router.get('/logout', function(req, res){
+    req.logout();
+    req.session = null;
+    res.redirect('/')
+});
+
+
 
 router.get("/team", (req, res) => {
     res.render("team");
 })
 
-router.post('/', passport.authenticate('local', {
-    successRedirect: '/', 
-    failureRedirect: '/registration'
-}))
 
 
 module.exports = router;
+
+//asdkjasdh

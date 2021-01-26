@@ -1,0 +1,3 @@
+lists by popularity using "The Movie Database".... or we scrape other lists online.
+
+When it comes to the cards, once you have the imdb id, go to the movie database to get image data.
