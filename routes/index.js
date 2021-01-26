@@ -1,33 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-let passport = require('passport');
+let passport = require("passport");
+
+
 
 router.get("/", (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     res.render("index", {
-        isAuthenticated
+        isAuthenticated,
     });
 });
 
-router.get('/login', (req, res) => {
-    res.render('login')
-})
-
-
-router.post('/login', passport.authenticate('local', { 
-    successRedirect: '/', 
-    failureRedirect: '/login'
-
-}))
-
-router.get('/logout', function(req, res){
-    req.logout();
-    req.session = null;
-    res.redirect('/')
+router.get("/login", (req, res) => {
+    res.render("login");
 });
 
+router.post(
+    "/login",
+    passport.authenticate("local", {
+        successRedirect: "/",
+        failureRedirect: "/login",
+    })
+);
 
+router.get("/logout", function (req, res) {
+    req.logout();
+    req.session = null;
+    res.redirect("/");
+});
 
 router.get("/team", (req, res) => {
     const isAuthenticated = req.isAuthenticated();
@@ -36,8 +37,4 @@ router.get("/team", (req, res) => {
     });
 })
 
-
-
 module.exports = router;
-
-//asdkjasdh
