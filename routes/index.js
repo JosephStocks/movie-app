@@ -18,13 +18,13 @@ router.get('/login', (req, res) => {
 router.post('/login', passport.authenticate('local', { 
     successRedirect: '/', 
     failureRedirect: '/login'
-
+    
 }))
 
 router.get('/logout', function(req, res){
     req.logout();
     req.session = null;
-    res.redirect('/')
+    res.redirect('/');
 });
 
 
