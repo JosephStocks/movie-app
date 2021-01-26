@@ -3,6 +3,8 @@ const router = express.Router();
 const axios = require("axios");
 let passport = require("passport");
 
+
+
 router.get("/", (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     res.render("index", {
@@ -29,7 +31,10 @@ router.get("/logout", function (req, res) {
 });
 
 router.get("/team", (req, res) => {
-    res.render("team");
-});
+    const isAuthenticated = req.isAuthenticated();
+    res.render("team", {
+        isAuthenticated
+    });
+})
 
 module.exports = router;
