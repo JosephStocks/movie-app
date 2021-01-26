@@ -1,10 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcryptjs');
 const db = require('../models');
-// const passport = require('./passport-instance');
 
-//req.body.username 
-//req.body.password
 
 const init = (passport) => {
 
