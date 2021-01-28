@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const helmet = require("helmet");
 const PORT = process.argv[2] || 3000;
+const cookieParser = require('cookie-parser')
 
 //bodyParser
 app.use(express.urlencoded({ extended: false }));
@@ -26,6 +27,8 @@ app.set("view engine", "ejs");
 
 //static
 app.use(express.static("public"));
+
+app.use(cookieParser())
 
 app.use(helmet());
 app.use(passport.initialize());

@@ -23,6 +23,7 @@
     "autoprefixer": "^10.2.3",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
     "cookie-session": "^1.4.0",
     "cookie-sessions": "0.0.2",
     "ejs": "^3.1.5",
