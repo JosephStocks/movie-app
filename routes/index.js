@@ -4,35 +4,40 @@ const axios = require("axios");
 let passport = require("passport");
 const db = require('../models')
 
+const savePreviousUrl = (req, res, next) => {
+    res.cookie('savedRoute', req.originalUrl)
+    next();
+}
 
 
 
-router.get("/", (req, res) => {
+
+router.get("/", savePreviousUrl, (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     res.render("index", {
         isAuthenticated,
     });
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', (req, res) => { 
     res.render('login')
 })
 
 
-router.post('/login', passport.authenticate('local', { 
-    successRedirect: '/', 
-    failureRedirect: '/login'
-    
-}))
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
+    const savedRoute = req.cookies.savedRoute || '/'
+    res.redirect(savedRoute)
+})
 
-router.get("/logout", function (req, res) {
+router.get("/logout", (req, res) => {
+    const savedRoute = req.cookies.savedRoute || '/'
     req.logout();
     req.session = null;
-    res.redirect("/");
+    res.redirect(savedRoute);
 });
 
 
-router.get("/team", (req, res) => {
+router.get("/team", savePreviousUrl, (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     res.render("team", {
         isAuthenticated
