@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const helmet = require("helmet");
 const PORT = process.argv[2] || 3000;
-const cookieParser = require('cookie-parser')
+const cookieParser = require("cookie-parser");
 
 //bodyParser
 app.use(express.urlencoded({ extended: false }));
@@ -28,7 +28,7 @@ app.set("view engine", "ejs");
 //static
 app.use(express.static("public"));
 
-app.use(cookieParser())
+app.use(cookieParser());
 
 app.use(helmet());
 app.use(passport.initialize());
@@ -37,6 +37,7 @@ app.use(passport.session());
 //routes
 app.use(require("./routes"));
 app.use(require("./routes/registration"));
+app.use(require("./routes/top100"));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
