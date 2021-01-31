@@ -17,7 +17,6 @@
             <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 ">
                 <li><a class="font-mono lg:p-4 py-3 px-0 block border-b-2 border-transparent text-white hover:border-indigo-400 font-semibold" href="team">The Team</a></li>
                 <% if (isAuthenticated) { %>
-                    <li><a id="loginButton" class="font-mono lg:p-4 py-3 px-0 block border-b-2 font-semibold border-transparent text-white hover:border-indigo-400" href="/logout">Log Out</a></li>
                     
                     <li class="group">
                         <button id="dropdownButton" class="dropdown bg-transparent lg:p-4 py-3 px-0 text-white font-semibold space-x-0 inline-flex items-center border-transparent font-mono border-b-2 hover:border-indigo-400 focus:border-transparent">
@@ -27,7 +26,7 @@
                         <ul id="dropdownMenu" class="hidden absolute font-mono text-violet-500 pt-1">
                             <li class=""><a class="rounded-t bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">My Lists</a></li>
                             <li class=""><a class="bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Account</a></li>
-                            <li class=""><a class="rounded-b bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Logout</a></li>
+                            <li class=""><a class="rounded-b bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/logout">Logout</a></li>
                         </ul>
                     </li>
                 
