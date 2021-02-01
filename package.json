@@ -37,5 +37,8 @@
     "sequelize": "^6.4.0",
     "tailwindcss": "^2.0.2",
     "tailwindcss-interaction-variants": "^5.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss-debug-screens": "^2.0.0"
   }
 }
