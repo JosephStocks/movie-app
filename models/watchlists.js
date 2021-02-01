@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.watchlists.belongsTo(models.users, {foreignKey: 'userid'})
-      models.watchlists.hasMany(models.movies, {foreignKey: 'movieid'})
+      models.watchlists.belongsTo(models.movies, {foreignKey: 'movieid'})
     }
   };
   watchlists.init({

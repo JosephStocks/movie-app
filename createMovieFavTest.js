@@ -42,6 +42,11 @@ const db = require("./models");
 (async () => {
     let records = await db.favorites.findAll({
         where: { userid: 1 },
+        include: [
+            {
+                model: db.movies,
+            },
+        ],
         raw: true,
     });
     console.log(records);
