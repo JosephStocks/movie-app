@@ -38,6 +38,7 @@ app.use(passport.session());
 app.use(require("./routes"));
 app.use(require("./routes/registration"));
 app.use(require("./routes/top100"));
+app.use(require("./routes/personalLists"));
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

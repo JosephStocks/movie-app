@@ -24,9 +24,9 @@
                             <svg class="fill-current h-4 w-4 transform rotate-90 transition-all duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                         </button>
                         <ul id="dropdownMenu" class="hidden z-10 absolute font-mono text-violet-500 pt-1">
-                            <li class=""><a class="rounded-t bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/favorites/HERE">Favorites</a></li>
-                            <li class=""><a class="rounded-t bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/watchlist">Watch List</a></li>
-                            <li class=""><a class="rounded-t bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/seenlist">Seen</a></li>
+                            <li class=""><a class="rounded-t bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/favorites/<%= userid %>">Favorites</a></li>
+                            <li class=""><a class="rounded-t bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/watchlist/<%= userid %>">Watch List</a></li>
+                            <li class=""><a class="rounded-t bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/seenlist/<%= userid %>">Seen</a></li>
                             <li class=""><a class="bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">Account</a></li>
                             <li class=""><a class="rounded-b bg-black hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="/logout">Logout</a></li>
                         </ul>
