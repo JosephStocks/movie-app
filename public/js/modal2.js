@@ -20,6 +20,12 @@ grid.addEventListener("click", (event) => {
     if (event.target.closest(".movie-card")) {
         let movieCard = event.target.closest(".movie-card");
         let title = movieCard.dataset.title;
+        let year = movieCard.dataset.year;
+        let synopsis = movieCard.dataset.synopsis;
+        let rated = movieCard.dataset.rated;
+        let rottentom = movieCard.dataset.rottentom;
+        let imdb = movieCard.dataset.imdb;
+        let metacritic = movieCard.dataset.metacritic;
         let modal = document.querySelector(".modal");
 
         // let modalContent = modal.querySelector(".modal-content > div > p");
@@ -50,7 +56,7 @@ grid.addEventListener("click", (event) => {
                 <div class="modal-content py-4 text-left px-6 font-mono">
                     <!--Title-->
                     <div class="flex justify-between items-center pb-3">
-                        <p class="text-2xl font-bold ">${title} (1999)</p>
+                        <p class="text-2xl font-bold ">${title} (${year})</p>
                         <div class="modal-close cursor-pointer z-50">
                         <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
                             <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
@@ -59,11 +65,11 @@ grid.addEventListener("click", (event) => {
                 </div>
 
                 <!--Body-->
-                <div class="mb-5">Rated R</div>
-                <div class="mb-5">The Matrix is a 1999 American science fiction action film[3][4] written and directed by the Wachowskis,[a] and produced by Joel Silver. It stars Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving, and Joe Pantoliano and is the first installment in the Matrix franchise. It depicts a dystopian future in which humanity is unknowingly trapped inside a simulated reality, the Matrix, created by intelligent machines to distract humans while using their bodies as an energy source.</div>
-                <div>Rotten Tomatoes: 12/100</div>
-                <div>MetaCritic: 90/100</div>
-                <div>IMDB: 4/5</div>
+                <div class="mb-5">Rated ${rated}</div>
+                <div class="mb-5">${synopsis}</div>
+                <div>Rotten Tomatoes: ${rottentom}</div>
+                <div>MetaCritic: ${metacritic}</div>
+                <div>IMDB: ${imdb}</div>
 
                 <!--Footer-->
                 <div class="footer flex justify-end pt-2">
