@@ -19,9 +19,12 @@ const savePreviousUrl = (req, res, next) => {
 
 router.get("/", savePreviousUrl, (req, res) => {
     const isAuthenticated = req.isAuthenticated();
+    // console.log(req.session);
+    console.log(`User ID: ${req.session.passport.user}`);
     res.render("index", {
         isAuthenticated,
         genreList: testObj,
+        userid: req.session.passport.user || null,
     });
 });
 
