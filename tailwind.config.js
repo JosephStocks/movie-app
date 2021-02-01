@@ -34,7 +34,11 @@ module.exports = {
             rose: colors.rose,
         },
         extend: {
-            width: {
+            spacing: {
+                76: "19rem",
+                84: "21rem",
+                88: "22rem",
+                92: "23rem",
                 md: "28rem",
                 lg: "32rem",
                 xl: "36rem",
@@ -47,6 +51,17 @@ module.exports = {
             },
             // fontFamily: {
             //     sans: `Roboto, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+            // },
+            // height: {
+            //     md: "28rem",
+            //     lg: "32rem",
+            //     xl: "36rem",
+            //     "2xl": "42rem",
+            //     "3xl": "48rem",
+            //     "4xl": "56rem",
+            //     "5xl": "64rem",
+            //     "6xl": "72rem",
+            //     "7xl": "80rem",
             // },
         },
     },
@@ -73,10 +88,12 @@ module.exports = {
             "hover",
             "focus",
         ],
+        height: ["hover", "focus"],
     },
     plugins: [
         require("@tailwindcss/forms"),
         require("@tailwindcss/typography"),
         require("tailwindcss-interaction-variants"),
+        require("tailwindcss-debug-screens"),
     ],
 };
