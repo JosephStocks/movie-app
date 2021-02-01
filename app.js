@@ -30,7 +30,7 @@ app.use(express.static("public"));
 
 app.use(cookieParser());
 
-app.use(helmet());
+// app.use(helmet());
 app.use(passport.initialize());
 app.use(passport.session());
 

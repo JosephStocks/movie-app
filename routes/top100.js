@@ -10,11 +10,13 @@ const db = require("../models");
 // sort by imdb/rottentomatoes
 // filter by top 50
 
-router.get("/movielist/:genreid", (req, res) => {
+router.get("/movielist/:genreid", async (req, res) => {
     const isAuthenticated = req.isAuthenticated();
+    let movieArr = await db.movies.findAll({ limit: 100 });
     res.render("top100", {
         isAuthenticated,
         genreid: req.params.genreid,
+        movieArr,
     });
 });
 
