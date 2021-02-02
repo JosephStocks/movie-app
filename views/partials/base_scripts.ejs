@@ -1,3 +1,13 @@
-<script src="/js/modal2.js"></script>
-<script src="/js/dropdown2.js"></script>
-<script src="/js/login-dropdown.js"></script>
+<% if (pageID === "home") { %> 
+    <script src="/js/dropdown2.js"></script>
+    <script src="/js/login-dropdown.js"></script>
+<% } else if (pageID === "personalLists") { %> 
+    <script src="/js/modal2.js"></script>
+    <script src="/js/dropdown2.js"></script>
+    <script src="/js/login-dropdown.js"></script>
+    <script src="/js/modalPersonal.js"></script>
+<% } else if (pageID === "top100" || pageID === "team") { %> 
+    <script src="/js/modal2.js"></script>
+    <script src="/js/dropdown2.js"></script>
+    <script src="/js/login-dropdown.js"></script>
+<% } %> 

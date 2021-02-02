@@ -23,12 +23,15 @@ router.get("/", savePreviousUrl, (req, res) => {
     res.render("index", {
         isAuthenticated,
         genreList: testObj,
-        userId: req?.session?.passport?.user || null
+        userId: req?.session?.passport?.user || null,
+        pageID: "home"
     });
 });
 
 router.get("/login", (req, res) => {
-    res.render("login");
+    res.render("login", {
+        pageID: "login"
+    });
 });
 
 router.post(
@@ -51,6 +54,7 @@ router.get("/team", savePreviousUrl, (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     res.render("team", {
         isAuthenticated,
+        pageID: "team"
     });
 });
 
