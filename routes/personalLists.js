@@ -14,7 +14,7 @@ router.get("/favorites", async (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     let movieArr = await db.favorites.findAll({
         where: {
-            userid: req?.session?.passport?.user || null ,
+            userid: req?.session?.passport?.user || null,
         },
         include: [
             {
@@ -23,6 +23,7 @@ router.get("/favorites", async (req, res) => {
         ],
         raw: true,
     });
+    console.log(movieArr);
     res.render("personalLists", {
         isAuthenticated,
         pageTitle: "My Favorites",
@@ -32,20 +33,26 @@ router.get("/favorites", async (req, res) => {
 });
 
 router.post("/favorites", async (req, res) => {
-    
     let movie = await db.movies.findOne({
         where: {
-            id: req.body.id 
-        }
+            id: req.body.id,
+        },
     });
 
-    if (movie) {
+    let records = await db.favorites.findAll({
+        where: {
+            userid: req.session.passport.user,
+            movieid: req.body.id,
+        },
+    });
+
+    if (movie && records.length === 0) {
         await db.favorites.create({
             userid: req.session.passport.user,
-            movieid: movie.id
-        })
+            movieid: movie.id,
+        });
     }
-})
+});
 
 router.get("/seenlist", async (req, res) => {
     const isAuthenticated = req.isAuthenticated();
@@ -64,32 +71,31 @@ router.get("/seenlist", async (req, res) => {
         isAuthenticated,
         pageTitle: "Seen List",
         movieArr,
-        userId:  req?.session?.passport?.user || null,
+        userId: req?.session?.passport?.user || null,
     });
 });
 
 router.post("/seenlist", async (req, res) => {
     let movie = await db.movies.findOne({
         where: {
-            id: req.body.id 
-        }
+            id: req.body.id,
+        },
     });
 
     if (movie) {
         await db.seenlists.create({
             userid: req.session.passport.user,
-            movieid: movie.id
-        })
+            movieid: movie.id,
+        });
     }
-})
-
+});
 
 router.get("/watchlist", async (req, res) => {
-    console.log('Here')
+    console.log("Here");
     const isAuthenticated = req.isAuthenticated();
     let movieArr = await db.watchlists.findAll({
         where: {
-            userid:  req?.session?.passport?.user || null,
+            userid: req?.session?.passport?.user || null,
         },
         include: [
             {
@@ -99,31 +105,30 @@ router.get("/watchlist", async (req, res) => {
         raw: true,
     });
 
-
     res.render("personalLists", {
         isAuthenticated,
         pageTitle: "Want To Watch List",
         movieArr,
-        userId:  req?.session?.passport?.user || null,
+        userId: req?.session?.passport?.user || null,
     });
 });
 
 router.post("/watchlist", async (req, res) => {
     let movie = await db.movies.findOne({
         where: {
-            id: req.body.id 
-        }
+            id: req.body.id,
+        },
     });
 
-    console.log(movie)
+    console.log(movie);
 
     if (movie) {
-        console.log(movie)
+        console.log(movie);
         await db.watchlists.create({
             userid: req.session.passport.user,
-            movieid: movie.id
-        })
+            movieid: movie.id,
+        });
     }
-})
+});
 
 module.exports = router;
