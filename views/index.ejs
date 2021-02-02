@@ -14,36 +14,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
     
 </head>
-<body class="bg-black">
+<body class="bg-black debug-screens">
         
     <%- include ('partials/navbar.ejs') %>
         
-    <form class="flex flex-col justify-center items-center text-white space-y-2">
-        <h1 class="block text-white text-xl">Movie Search</h1>
+    <form class="flex flex-col justify-center items-center text-white space-y-4">
+        <h1 class="block text-white text-2xl">Movie Search</h1>
         <div class="space-x-2">
-            <input class="text-black p-1" type="text" name="search" id="search">
-            <input class="p-1 px-2 rounded text-violet-500" type="submit" value="Search">
+            <input class="text-black p-2 px-3" type="text" name="search" id="search">
+            <input class="p-2 px-3 rounded text-white bg-violet-500 font-bold hover:bg-violet-600 hover:cursor-pointer" type="submit" value="Search">
         </div>
     </form>
 
-    <div class="flex flex-row flex-wrap justify-center space-x-5 font-semibold font-mono text-violet-500">
-        <a href="/moviesByRated/G"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 G Rated Movies</button></a>
-        <a href="/moviesByRated/PG"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 PG Rated Movies</button></a>
-        <a href="/moviesByRated/PG-13"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 PG-13 Rated Movies</button></a>
-        <a href="/moviesByRated/R"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 R Rated Movies</button></a>
-        <a href="/moviesByGenre/Action"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Action Movies</button></a>
-        <a href="/moviesByGenre/Adventure"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Adventure Movies</button></a>
-        <a href="/moviesByGenre/Fantasy"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Fantasy Movies</button></a>
-        <a href="/moviesByGenre/Sci-Fi"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Sci-Fi Movies</button></a>
-        <a href="/moviesByGenre/Thriller"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Thriller Movies</button></a>
-        <a href="/moviesByGenre/Crime"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Crime Movies</button></a>
-        <a href="/moviesByGenre/Drama"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Drama Movies</button></a>
-        <a href="/moviesByGenre/Animation"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Animation Movies</button></a>
-        <a href="/moviesByGenre/Comedy"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Comedy Movies</button></a>
-        <a href="/moviesByGenre/Family"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Family Movies</button></a>
-        <a href="/moviesByGenre/Short"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Shorts</button></a>
-        <a href="/moviesByGenre/Horror"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Horror Movies</button></a>
-        <a href="/moviesByGenre/Mystery"><button class="bg-transparent lg:p-4 py-2 px-4 mt-5 hover:border-white border-transparent focus:border-transparent border-2">Top 100 Mystery Movies</button></a>
+    <div class="mt-5 px-2 xl:px-0 grid grid-cols-4 gap-x-2 md:gap-x-6 gap-y-3 md:gap-y-10 grid-flow-row auto-rows-fr text-sm md:text-xl font-semibold font-mono text-violet-500 max-w-screen-lg mx-auto">
+        <a href="/moviesByRated/G"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 G Rated Movies</button></a>
+        <a href="/moviesByRated/PG"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 PG Rated Movies</button></a>
+        <a href="/moviesByRated/PG-13"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 PG-13 Rated Movies</button></a>
+        <a href="/moviesByRated/R"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 R Rated Movies</button></a>
+        <a href="/moviesByGenre/Action"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Action Movies</button></a>
+        <a href="/moviesByGenre/Adventure"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Adventure Movies</button></a>
+        <a href="/moviesByGenre/Fantasy"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Fantasy Movies</button></a>
+        <a href="/moviesByGenre/Sci-Fi"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Sci-Fi Movies</button></a>
+        <a href="/moviesByGenre/Thriller"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Thriller Movies</button></a>
+        <a href="/moviesByGenre/Crime"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Crime Movies</button></a>
+        <a href="/moviesByGenre/Drama"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Drama Movies</button></a>
+        <a href="/moviesByGenre/Animation"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Animation Movies</button></a>
+        <a href="/moviesByGenre/Comedy"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Comedy Movies</button></a>
+        <a href="/moviesByGenre/Family"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Family Movies</button></a>
+        <a href="/moviesByGenre/Short"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Shorts</button></a>
+        <a href="/moviesByGenre/Horror"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Horror Movies</button></a>
+        <a href="/moviesByGenre/Mystery"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 Mystery Movies</button></a>
     </div>
     
     <!--Modal-->
