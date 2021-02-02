@@ -109,10 +109,10 @@ if (grid) {
     
                     <!--Footer-->
                     <div class="footer flex justify-end pt-2">
-                        <button onClick="addToWatchList(${id})" class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add To Watchlist</button>
-                        <button onClick="addToSeenList(${id})"  class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Seen</button>
-                        <button onClick="addToFavoriteList(${id})"  class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Favorite</button>
-                        <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Close</button>
+                        <button onClick="addToWatchList(${id})" class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add To Watchlist</button>
+                        <button onClick="addToSeenList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Seen</button>
+                        <button onClick="addToFavoriteList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Favorite</button>
+                        <button class="modal-close px-1 bg-indigo-500 p-1 rounded-lg text-white hover:bg-indigo-400">Close</button>
                     </div> 
                 </div>
                 `;
