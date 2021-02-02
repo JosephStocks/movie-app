@@ -18,32 +18,11 @@
         
     <%- include ('partials/navbar.ejs') %> 
 
-    
-    <div class="flex justify-center items-center">
-        <p class="font-mono text-violet-500">Action Movies</p>
-    </div>
-    <div class="grid grid-flow-col-dense p-3 bg-black">
-        <div class="container mx-auto bg-black py-10 px-5 flex justify-center items-center w-60">
-            <button class="modal-open">
-                <div class="bg-black w-50 shadow-lg cursor-pointer transform hover:scale-105 duration-300 ease-in-out overflow-hidden rounded-lg">
-                    <div class="">
-                        <img src="images/matrix.jpg" alt="" class="w-full">
-                    </div>
-                    <div class="p-1 flex flex-col justify-center items-center">
-                        <p class="block text-sm md:text-2xl uppercase font-mono text-white">The Matrix</p>
-                        <p class="block text-xs med:text-sm uppercase font-mono text-white">(1999)</p>
-                    </div>
-                </div>
-            </button>
-        </div>
-    </div>
-
     <div class="flex flex-row justify-center space-x-5 text-violet-500">
-        <a class="inline-block" href="/movielist/1">Top 100 Action</a>
-        <a class="inline-block" href="/movielist/2">Top 100 Horror</a>
-        <a class="inline-block" href="/movielist/3">Top 100 Drama</a>
-        <a class="inline-block" href="/movielist/4">Top 100 Comedy</a>
-        <a class="inline-block" href="/movielist/5">Top 100 Sci-Fi</a>
+        <a class="inline-block" href="/movielist/G">Top 100 G Rated Movies</a>
+        <a class="inline-block" href="/movielist/PG">Top 100 PG Rated Movies</a>
+        <a class="inline-block" href="/movielist/PG-13">Top 100 PG-13 Rated Movies</a>
+        <a class="inline-block" href="/movielist/R">Top 100 R Rated Movies</a>
     </div>
     
     <!--Modal-->

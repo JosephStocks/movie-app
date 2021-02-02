@@ -29,6 +29,7 @@ router.get("/favorites", async (req, res) => {
         pageTitle: "My Favorites",
         movieArr,
         userId: req.params.userid,
+        pageID: "personalLists"
     });
 });
 
@@ -72,6 +73,7 @@ router.get("/seenlist", async (req, res) => {
         pageTitle: "Seen List",
         movieArr,
         userId: req?.session?.passport?.user || null,
+        pageID: "personalLists"
     });
 });
 
@@ -117,6 +119,7 @@ router.get("/watchlist", async (req, res) => {
         pageTitle: "Want To Watch List",
         movieArr,
         userId: req?.session?.passport?.user || null,
+        pageID: "personalLists"
     });
 });
 

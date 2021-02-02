@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 let passport = require("passport");
 const db = require("../models");
+const { Op } = require("sequelize");
 
 //action, horror, drama, comedy, SciFi
 // grab json objects
@@ -10,14 +11,28 @@ const db = require("../models");
 // sort by imdb/rottentomatoes
 // filter by top 50
 
-router.get("/movielist/:genreid", async (req, res) => {
+// above 1000 imdb votes
+// mpaa-rating = R
+// sort by imdb rating descending G, PG, PG-13, R
+
+router.get("/movielist/:rated", async (req, res) => {
     const isAuthenticated = req.isAuthenticated();
-    let movieArr = await db.movies.findAll({ limit: 100 });
+    let movieArr = await db.movies.findAll({
+        where: {
+            mpaa_rating: req.params.rated, //could be issue with whitespace!
+            imdbvotes: {
+                [Op.gte]: 1000, // square brackets are needed for property names that aren't plain strings
+            },
+        },
+        order: [["imdb_rating", "DESC"]],
+        limit: 100,
+    });
     res.render("top100", {
         isAuthenticated,
-        genreid: req.params.genreid,
+        genreid: req.params.rated,
         movieArr,
-        userId: req?.session?.passport?.user || null
+        userId: req?.session?.passport?.user || null,
+        pageID: "top100",
     });
 });
 
