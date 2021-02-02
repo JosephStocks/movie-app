@@ -15,7 +15,7 @@ const { Op } = require("sequelize");
 // mpaa-rating = R
 // sort by imdb rating descending G, PG, PG-13, R
 
-router.get("/movielist/:rated", async (req, res) => {
+router.get("/moviesByRated/:rated", async (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     let movieArr = await db.movies.findAll({
         where: {
@@ -30,6 +30,30 @@ router.get("/movielist/:rated", async (req, res) => {
     res.render("top100", {
         isAuthenticated,
         genreid: req.params.rated,
+        movieArr,
+        userId: req?.session?.passport?.user || null,
+        pageID: "top100",
+    });
+});
+
+router.get("/moviesByGenre/:genre", async (req, res) => {
+    const isAuthenticated = req.isAuthenticated();
+    let movieArr = await db.movies.findAll({
+        where: {
+            // mpaa_rating: req.params.rated, //could be issue with whitespace!
+            genres: {
+                [Op.iLike]: `%${req.params.genre}%`,
+            },
+            imdbvotes: {
+                [Op.gte]: 1000, // square brackets are needed for property names that aren't plain strings
+            },
+        },
+        order: [["imdb_rating", "DESC"]],
+        limit: 100,
+    });
+    res.render("top100", {
+        isAuthenticated,
+        genreid: req.params.genre,
         movieArr,
         userId: req?.session?.passport?.user || null,
         pageID: "top100",
