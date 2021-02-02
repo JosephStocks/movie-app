@@ -82,7 +82,14 @@ router.post("/seenlist", async (req, res) => {
         },
     });
 
-    if (movie) {
+    let records = await db.seenlists.findAll({
+        where: {
+            userid: req.session.passport.user,
+            movieid: req.body.id,
+        },
+    });
+
+    if (movie && records.length === 0) {
         await db.seenlists.create({
             userid: req.session.passport.user,
             movieid: movie.id,
@@ -120,9 +127,14 @@ router.post("/watchlist", async (req, res) => {
         },
     });
 
-    console.log(movie);
+    let records = await db.watchlists.findAll({
+        where: {
+            userid: req.session.passport.user,
+            movieid: req.body.id,
+        },
+    });
 
-    if (movie) {
+    if (movie && records.length === 0) {
         console.log(movie);
         await db.watchlists.create({
             userid: req.session.passport.user,

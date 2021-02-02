@@ -6,7 +6,7 @@ const toggleModal = () => {
     body.classList.toggle("modal-active");
 };
 
-const overlay = document.querySelector(".modal-overlay");
+let overlay = document.querySelector(".modal-overlay");
 overlay.addEventListener("click", toggleModal);
 
 var closemodal = document.querySelectorAll(".modal-close");
