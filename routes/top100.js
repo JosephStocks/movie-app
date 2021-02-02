@@ -17,6 +17,7 @@ router.get("/movielist/:genreid", async (req, res) => {
         isAuthenticated,
         genreid: req.params.genreid,
         movieArr,
+        userId: req?.session?.passport?.user || null
     });
 });
 
