@@ -24,13 +24,13 @@ router.get("/", savePreviousUrl, (req, res) => {
         isAuthenticated,
         genreList: testObj,
         userId: req?.session?.passport?.user || null,
-        pageID: "home"
+        pageID: "home",
     });
 });
 
 router.get("/login", (req, res) => {
     res.render("login", {
-        pageID: "login"
+        pageID: "login",
     });
 });
 
@@ -38,8 +38,12 @@ router.post(
     "/login",
     passport.authenticate("local", { failureRedirect: "/login" }),
     (req, res) => {
-        const savedRoute = req.cookies.savedRoute || "/";
-        res.redirect(savedRoute);
+        try {
+            const savedRoute = req.cookies.savedRoute || "/";
+            res.redirect(savedRoute);
+        } catch (err) {
+            res.redirect("/login");
+        }
     }
 );
 
@@ -54,7 +58,7 @@ router.get("/team", savePreviousUrl, (req, res) => {
     const isAuthenticated = req.isAuthenticated();
     res.render("team", {
         isAuthenticated,
-        pageID: "team"
+        pageID: "team",
     });
 });
 
