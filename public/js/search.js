@@ -24,7 +24,7 @@ form.addEventListener("submit", async (e) => {
     let records = await response.json();
 
     let moviesArr = records.results;
-    let totalPages = records.total_pages;
+    let totalPages = Math.min(records.total_pages, 9);
 
     for (let page = 2; page <= totalPages; page++) {
         response = await fetch(

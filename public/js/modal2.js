@@ -18,8 +18,8 @@ for (var i = 0; i < closemodal.length; i++) {
 
 let grid = document.querySelector(".grid");
 
-const addToWatchList = (id) => {
-    fetch("http://localhost:3000/watchlist", {
+const addToWatchList = async (id) => {
+    let response = await fetch("/watchlist", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -28,10 +28,15 @@ const addToWatchList = (id) => {
             id,
         }),
     });
+    record = await response.json();
+    console.log(record);
+    if (!record.loggedIn) {
+        window.location.replace("/login");
+    }
 };
 
-const addToSeenList = (id) => {
-    fetch("http://localhost:3000/seenlist", {
+const addToSeenList = async (id) => {
+    let response = await fetch("/seenlist", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -40,10 +45,15 @@ const addToSeenList = (id) => {
             id,
         }),
     });
+    record = await response.json();
+    console.log(record);
+    if (!record.loggedIn) {
+        window.location.replace("/login");
+    }
 };
 
-const addToFavoriteList = (id) => {
-    fetch("http://localhost:3000/favorites", {
+const addToFavoriteList = async (id) => {
+    let response = await fetch("/favorites", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -52,6 +62,11 @@ const addToFavoriteList = (id) => {
             id,
         }),
     });
+    record = await response.json();
+    console.log(record);
+    if (!record.loggedIn) {
+        window.location.replace("/login");
+    }
 };
 
 const addGridEventListener = () => {
