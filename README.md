@@ -138,6 +138,6 @@ Saving Cards to Personal Lists
 
 **Developer Team**
 
-- Joe Stocks: Search API Calls, API Calls for Preloaded Data, Dynamically Populating Cards and Modals
+- Joe Stocks: Search API Calls, API Calls for Preloaded Data, Dynamically Populating Cards and Modals, Database Design
 - Jacob Deel: UX, Design, Responsiveness
 - Ian Haddock: Login, Registration, and Saving Cards to list. 
