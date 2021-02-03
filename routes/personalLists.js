@@ -40,6 +40,7 @@ router.post("/favorites", async (req, res) => {
         req.session.passport &&
         req.session.passport.user
     ) {
+        console.log("yay. You are logged in!");
         let movie = await db.movies.findOne({
             where: {
                 id: req.body.id,
@@ -59,8 +60,10 @@ router.post("/favorites", async (req, res) => {
                 movieid: movie.id,
             });
         }
+        res.json({ loggedIn: true });
     } else {
-        res.redirect(302, "/login");
+        console.log("You are not logged in");
+        res.json({ loggedIn: false });
     }
 });
 
@@ -87,27 +90,36 @@ router.get("/seenlist", async (req, res) => {
 });
 
 router.post("/seenlist", async (req, res) => {
-    if (!req?.session?.passport?.user) {
-        res.redirect("/login");
-    }
-    let movie = await db.movies.findOne({
-        where: {
-            id: req.body.id,
-        },
-    });
-
-    let records = await db.seenlists.findAll({
-        where: {
-            userid: req.session.passport.user,
-            movieid: req.body.id,
-        },
-    });
-
-    if (movie && records.length === 0) {
-        await db.seenlists.create({
-            userid: req.session.passport.user,
-            movieid: movie.id,
+    if (
+        req &&
+        req.session &&
+        req.session.passport &&
+        req.session.passport.user
+    ) {
+        console.log("yay. You are logged in!");
+        let movie = await db.movies.findOne({
+            where: {
+                id: req.body.id,
+            },
         });
+
+        let records = await db.seenlists.findAll({
+            where: {
+                userid: req.session.passport.user,
+                movieid: req.body.id,
+            },
+        });
+
+        if (movie && records.length === 0) {
+            await db.seenlists.create({
+                userid: req.session.passport.user,
+                movieid: movie.id,
+            });
+        }
+        res.json({ loggedIn: true });
+    } else {
+        console.log("You are not logged in");
+        res.json({ loggedIn: false });
     }
 });
 
@@ -137,28 +149,40 @@ router.get("/watchlist", async (req, res) => {
 
 ////////SAVES CARD TO WATCHLIST THAT IS CLICKED ON/////////
 router.post("/watchlist", async (req, res) => {
-    if (!req?.session?.passport?.user) {
-        res.redirect("/login");
-    }
-    let movie = await db.movies.findOne({
-        where: {
-            id: req.body.id,
-        },
-    });
-
-    let records = await db.watchlists.findAll({
-        where: {
-            userid: req.session.passport.user,
-            movieid: req.body.id,
-        },
-    });
-
-    if (movie && records.length === 0) {
-        console.log(movie);
-        await db.watchlists.create({
-            userid: req.session.passport.user,
-            movieid: movie.id,
+    if (
+        req &&
+        req.session &&
+        req.session.passport &&
+        req.session.passport.user
+    ) {
+        console.log("yay. You are logged in!");
+        if (!req?.session?.passport?.user) {
+            res.redirect("/login");
+        }
+        let movie = await db.movies.findOne({
+            where: {
+                id: req.body.id,
+            },
         });
+
+        let records = await db.watchlists.findAll({
+            where: {
+                userid: req.session.passport.user,
+                movieid: req.body.id,
+            },
+        });
+
+        if (movie && records.length === 0) {
+            console.log(movie);
+            await db.watchlists.create({
+                userid: req.session.passport.user,
+                movieid: movie.id,
+            });
+        }
+        res.json({ loggedIn: true });
+    } else {
+        console.log("You are not logged in");
+        res.json({ loggedIn: false });
     }
 });
 
