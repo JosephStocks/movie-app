@@ -9,24 +9,26 @@
    style-src  'self' 'unsafe-inline' *">
     <title>The Movie Matrix</title>
     <link rel="stylesheet" href="css/tailwind.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/projector.png">
     
 </head>
 <body class="bg-black debug-screens">
         
     <%- include ('partials/navbar.ejs') %>
         
-    <form class="flex flex-col justify-center items-center text-white space-y-4">
+    <form id="searchform" class="flex flex-col justify-center items-center text-white space-y-4">
         <h1 class="block text-white text-2xl">Movie Search</h1>
         <div class="space-x-2">
-            <input class="text-black p-2 px-3" type="text" name="search" id="search">
+            <input class="rounded text-black p-2 px-3 hover:bg-violet-200" type="text" name="search" id="search">
             <input class="p-2 px-3 rounded text-white bg-violet-500 font-bold hover:bg-violet-600 hover:cursor-pointer" type="submit" value="Search">
         </div>
     </form>
-
-    <div class="mt-5 px-2 xl:px-0 grid grid-cols-4 gap-x-2 md:gap-x-6 gap-y-3 md:gap-y-10 grid-flow-row auto-rows-fr text-sm md:text-xl font-semibold font-mono text-violet-500 max-w-screen-lg mx-auto">
+    <div id="divider" class="mt-8 flex flex-nowrap justify-center">
+        <div class="mx-2 xl:mx-0 border-t-2 border-violet-400 bg-transparent w-5xl rounded-lg"></div>
+    </div>
+    <div id="top-links" class="mt-4 px-2 xl:px-0 grid grid-cols-4 gap-x-2 md:gap-x-6 gap-y-3 md:gap-y-10 grid-flow-row auto-rows-fr text-sm md:text-xl font-semibold font-mono text-violet-500 max-w-screen-lg mx-auto">
         <a href="/moviesByRated/G"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 G Rated Movies</button></a>
         <a href="/moviesByRated/PG"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 PG Rated Movies</button></a>
         <a href="/moviesByRated/PG-13"><button class="rounded-md w-full h-full bg-transparent p-1 md:py-1 md:px-2 hover:text-white  hover:border-white border-violet-500 focus:border-transparent border-2">Top 100 PG-13 Rated Movies</button></a>

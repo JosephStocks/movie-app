@@ -9,9 +9,9 @@
     style-src  'self' 'unsafe-inline' *">
     <title>The Movie Matrix</title>
     <link rel="stylesheet" href="/css/tailwind.css">
-    <link rel="stylesheet" href="/css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/projector.png">
 </head>
 <body class="bg-black debug-screens">
         
@@ -29,7 +29,7 @@
                         data-imdb="<%= movie.imdb_rating %>" 
                         data-rottentom="<%= movie.rottentom_rating %>" 
                         data-metacritic="<%= movie.metacritic_rating %>" 
-                        data-synopsis="<%= movie.synopsis %>" 
+                        data-synopsis="<%= movie.synopsis %>"
                         class="movie-card block bg-black shadow-lg cursor-pointer transform hover:scale-105 duration-300 ease-in-out overflow-hidden rounded-lg" 
                         title="<%= movie.title %>">
                         <img class="w-full"  src="https://image.tmdb.org/t/p/w500<%= movie.poster_rel_url %>">
