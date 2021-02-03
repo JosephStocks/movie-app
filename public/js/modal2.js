@@ -18,49 +18,40 @@ for (var i = 0; i < closemodal.length; i++) {
 
 let grid = document.querySelector(".grid");
 
-const addToWatchList = (id, imdbid) => {
-    if (id) {
-        fetch("http://localhost:3000/watchlist", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                id,
-            }),
-        });
-    } else {
-    }
+const addToWatchList = (id) => {
+    fetch("http://localhost:3000/watchlist", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id,
+        }),
+    });
 };
 
-const addToSeenList = (id, imdbid) => {
-    if (id) {
-        fetch("http://localhost:3000/seenlist", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                id,
-            }),
-        });
-    } else {
-    }
+const addToSeenList = (id) => {
+    fetch("http://localhost:3000/seenlist", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id,
+        }),
+    });
 };
 
-const addToFavoriteList = (id, imdbid) => {
-    if (id) {
-        fetch("http://localhost:3000/favorites", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                id,
-            }),
-        });
-    } else {
-    }
+const addToFavoriteList = (id) => {
+    fetch("http://localhost:3000/favorites", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id,
+        }),
+    });
 };
 
 const addGridEventListener = () => {
@@ -122,9 +113,9 @@ const addGridEventListener = () => {
         
                         <!--Footer-->
                         <div class="footer flex justify-end pt-2">
-                            <button onClick="addToWatchList(${id}, '${imdbid}')" class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add To Watchlist</button>
-                            <button onClick="addToSeenList(${id}, '${imdbid}')"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Seen</button>
-                            <button onClick="addToFavoriteList(${id}, '${imdbid}')"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Favorite</button>
+                            <button onClick="addToWatchList(${id})" class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add To Watchlist</button>
+                            <button onClick="addToSeenList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Seen</button>
+                            <button onClick="addToFavoriteList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Favorite</button>
                             <button class="modal-close px-1 bg-indigo-500 p-1 rounded-lg text-white hover:bg-indigo-400">Close</button>
                         </div> 
                     </div>

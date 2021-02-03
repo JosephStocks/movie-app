@@ -60,7 +60,7 @@ router.post("/favorites", async (req, res) => {
             });
         }
     } else {
-        res.redirect("/login");
+        res.redirect(302, "/login");
     }
 });
 
