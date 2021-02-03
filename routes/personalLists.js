@@ -135,6 +135,7 @@ router.get("/watchlist", async (req, res) => {
     });
 });
 
+////////SAVES CARD TO WATCHLIST THAT IS CLICKED ON/////////
 router.post("/watchlist", async (req, res) => {
     if (!req?.session?.passport?.user) {
         res.redirect("/login");
