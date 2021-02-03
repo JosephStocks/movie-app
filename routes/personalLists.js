@@ -29,11 +29,14 @@ router.get("/favorites", async (req, res) => {
         pageTitle: "My Favorites",
         movieArr,
         userId: req.params.userid,
-        pageID: "personalLists"
+        pageID: "personalLists",
     });
 });
 
 router.post("/favorites", async (req, res) => {
+    if (!req?.session?.passport?.user) {
+        res.redirect("/login");
+    }
     let movie = await db.movies.findOne({
         where: {
             id: req.body.id,
@@ -73,11 +76,14 @@ router.get("/seenlist", async (req, res) => {
         pageTitle: "Seen List",
         movieArr,
         userId: req?.session?.passport?.user || null,
-        pageID: "personalLists"
+        pageID: "personalLists",
     });
 });
 
 router.post("/seenlist", async (req, res) => {
+    if (!req?.session?.passport?.user) {
+        res.redirect("/login");
+    }
     let movie = await db.movies.findOne({
         where: {
             id: req.body.id,
@@ -119,11 +125,14 @@ router.get("/watchlist", async (req, res) => {
         pageTitle: "Want To Watch List",
         movieArr,
         userId: req?.session?.passport?.user || null,
-        pageID: "personalLists"
+        pageID: "personalLists",
     });
 });
 
 router.post("/watchlist", async (req, res) => {
+    if (!req?.session?.passport?.user) {
+        res.redirect("/login");
+    }
     let movie = await db.movies.findOne({
         where: {
             id: req.body.id,
