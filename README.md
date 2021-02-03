@@ -40,13 +40,33 @@ Implement a search bar that allows user to search the API directly and bring bac
 
 **Code Snippets**
 
+Grab full details from open movie database:
 ```
-Joe Code
+    promises = moviesArr.map(async (movie, index) => {
+        let imdb_id = movie.imdb_id;
+        console.log(imdb_id);
+        let response = await fetch(
+            `http://private.omdbapi.com/?i=${imdb_id}&apikey=9a14bb73`
+        );
+        let result = await response.json();
+        moviesArr[index] = {
+            ...moviesArr[index],
+            ...result,
+        };
+    });
+
+    await Promise.all(promises);
+    console.log(moviesArr);
+
+    let filteredResults = moviesArr.filter((movie, index) => {
+        return movie.Title;
+    });
+
+    populateSearchResultCards(filteredResults);
 ```
 
-
+Responsive navbar dropdown menu checks if user is logged in:
 ```
-////RESPONSIVE DROPDOWN MENU CHECKS IF USER IS LOGGED IN//////
 <div class="lg:hidden xs:items-center w-auto" id="menu">
         <nav>
             <ul class=“lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0 “>
@@ -75,9 +95,8 @@ Joe Code
 
 ```
 
-
+On button click, save cards to watchlist:
 ```
-////////SAVES CARD TO WATCHLIST THAT IS CLICKED ON/////////
 router.post("/watchlist", async (req, res) => {
     if (!req?.session?.passport?.user) {
         res.redirect("/login");
@@ -109,11 +128,16 @@ router.post("/watchlist", async (req, res) => {
 
 **Screen Shots and GIFS**
 
+Search Capabilities
+![movie-matrix-search2](https://user-images.githubusercontent.com/26754072/106790757-9a11b780-6619-11eb-85cb-5bdaa59e0e17.gif)  
+  
+Saving Cards to Personal Lists
+![movie-matrix-saving](https://user-images.githubusercontent.com/26754072/106791021-0096d580-661a-11eb-8f54-07f7f66a9bee.gif)
 
 
 
 **Developer Team**
 
-- Joe Stocks: 
+- Joe Stocks: Search API Calls, API Calls for Preloaded Data, Dynamically Populating Cards and Modals
 - Jacob Deel: UX, Design, Responsiveness
 - Ian Haddock: Login, Registration, and Saving Cards to list. 

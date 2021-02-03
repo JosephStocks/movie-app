@@ -1,13 +1,4 @@
 let form = document.querySelector("#searchform");
-// form.addEventListener("submit", async (e) => {
-//     e.preventDefault();
-//     let value = form.querySelector("input[type=text]").value;
-//     let response = await fetch(
-//         `http://private.omdbapi.com/?t=${value}&apikey=9a14bb73`
-//     );
-//     const records = await response.json();
-//     console.log(records);
-// });
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -35,23 +26,15 @@ form.addEventListener("submit", async (e) => {
 
         moviesArr = moviesArr.concat(records.results);
     }
-    // console.log(moviesArr.length);
     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Grab imdb_ids from the movie databse for each movie query result
     let promises = moviesArr.map(async (movie, index) => {
-        // console.log(movie);
-        // console.log(
-        //     `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${api_params.api_key}&language=${api_params.language}`
-        // );
         let response = await fetch(
             `https://api.themoviedb.org/3/movie/${movie.id}?api_key=${api_params.api_key}&language=${api_params.language}`
         );
         record = await response.json();
-        // let imdbid = record.imdb_id || null;
-        // moviesArr[index].imdb_id = imdbid;
 
-        // console.log(record.imdb_id);
         let imdbid = record.imdb_id || null;
         moviesArr[index].imdb_id = imdbid;
     });
@@ -62,8 +45,6 @@ form.addEventListener("submit", async (e) => {
 
     // Grab full details from open movie database
     promises = moviesArr.map(async (movie, index) => {
-        // console.log(movie);
-        // console.log(typeof movie);
         let imdb_id = movie.imdb_id;
         console.log(imdb_id);
         let response = await fetch(
@@ -114,8 +95,6 @@ const populateSearchResultCards = (filteredResults) => {
 
     let cards_innerhtml = "";
     filteredResults.forEach((movie, index) => {
-        // No movie.id yet because the entry doesn't exist in the database
-
         let {
             title,
             overview,
@@ -151,18 +130,6 @@ const populateSearchResultCards = (filteredResults) => {
             });
         }
 
-        // if (BoxOffice) {
-        //     try {
-        //         BoxOffice = parseInt(BoxOffice.slice(1).replaceAll(",", ""));
-
-        //         if (Number.isNaN(BoxOffice)) {
-        //             BoxOffice = null;
-        //         }
-        //     } catch (error) {
-        //         BoxOffice = null;
-        //     }
-        // }
-
         if (imdbVotes) {
             try {
                 imdbVotes = parseInt(imdbVotes.replaceAll(",", ""));
@@ -173,22 +140,7 @@ const populateSearchResultCards = (filteredResults) => {
                 imdbVotes = null;
             }
         }
-        // console.log(BoxOffice);
 
-        // let newMovieObj = {
-        //     title: title,
-        //     year: parseInt(release_date.split("-")[0]),
-        //     synopsis: overview,
-        //     genres: Genre,
-        //     mpaa_rating: Rated,
-        //     imdb_rating,
-        //     rottentom_rating,
-        //     metacritic_rating,
-        //     boxoffice: BoxOffice,
-        //     poster_rel_url: poster_path,
-        //     release_date: release_date,
-        //     imdbvotes: imdbVotes,
-        // };
         if (release_date) {
             var year = parseInt(release_date.split("-")[0]);
         }
@@ -204,7 +156,6 @@ const populateSearchResultCards = (filteredResults) => {
         }
 
         overview = overview.replace(/"/g, `\'`);
-        // str.replace(/"/g, '\\"');
 
         cards_innerhtml += `
             <a
@@ -232,28 +183,3 @@ const populateSearchResultCards = (filteredResults) => {
 
     addGridEventListener();
 };
-
-// <% movieArr.forEach(movie => { %>
-//     <a
-//         data-movieid="<%= movie.id %>"
-//         data-title="<%= movie.title %>"
-//         data-year="<%= movie.year %>"
-//         data-rated="<%= movie.mpaa_rating %>"
-//         data-imdb="<%= movie.imdb_rating %>"
-//         data-rottentom="<%= movie.rottentom_rating %>"
-//         data-metacritic="<%= movie.metacritic_rating %>"
-//         data-synopsis="<%= movie.synopsis %>"
-//         class="movie-card block bg-black shadow-lg cursor-pointer transform hover:scale-105 duration-300 ease-in-out overflow-hidden rounded-lg"
-//         title="<%= movie.title %>">
-//         <img class="w-full"  src="https://image.tmdb.org/t/p/w500<%= movie.poster_rel_url %>">
-
-//         <div class="h-12 px-2 p-0 flex flex-col justify-center items-center rounded-lg rounded-t-none bg-gray-900">
-//             <p class="block text-sm sm:text-xl uppercase font-mono text-white truncate w-full text-center leading-none p-0"><%= movie.title %></p>
-//             <p class="block text-xs sm:text-base uppercase font-mono text-white leading-none">(<%= movie.year %>)</p>
-//         </div>
-//     </a>
-
-// <% }) %>
-//Search from themoviedatabase
-//do one by one search for imdb_id from themoviedatabase
-//search for full details one by one from open-movie-database
