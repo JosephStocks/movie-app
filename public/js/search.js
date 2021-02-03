@@ -119,19 +119,19 @@ const populateSearchResultCards = (filteredResults) => {
         let {
             title,
             overview,
-            Genre = null,
-            Rated = null,
-            Ratings = null,
-            BoxOffice = null,
+            Genre = "",
+            Rated = "",
+            Ratings = "",
+            BoxOffice = "",
             poster_path,
-            release_date = null,
-            imdbVotes = null,
-            imdbID = null,
+            release_date = "",
+            imdbVotes = "",
+            imdbID = "",
         } = movie;
 
-        let imdb_rating = null;
-        let rottentom_rating = null;
-        let metacritic_rating = null;
+        let imdb_rating = "";
+        let rottentom_rating = "";
+        let metacritic_rating = "";
 
         if (Ratings) {
             Ratings.forEach((rating) => {
@@ -151,17 +151,17 @@ const populateSearchResultCards = (filteredResults) => {
             });
         }
 
-        if (BoxOffice) {
-            try {
-                BoxOffice = parseInt(BoxOffice.slice(1).replaceAll(",", ""));
+        // if (BoxOffice) {
+        //     try {
+        //         BoxOffice = parseInt(BoxOffice.slice(1).replaceAll(",", ""));
 
-                if (Number.isNaN(BoxOffice)) {
-                    BoxOffice = null;
-                }
-            } catch (error) {
-                BoxOffice = null;
-            }
-        }
+        //         if (Number.isNaN(BoxOffice)) {
+        //             BoxOffice = null;
+        //         }
+        //     } catch (error) {
+        //         BoxOffice = null;
+        //     }
+        // }
 
         if (imdbVotes) {
             try {
