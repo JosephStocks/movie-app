@@ -124,7 +124,7 @@ const populateSearchResultCards = (filteredResults) => {
             Ratings = null,
             BoxOffice = null,
             poster_path,
-            release_date,
+            release_date = null,
             imdbVotes = null,
             imdbID = null,
         } = movie;
@@ -189,7 +189,9 @@ const populateSearchResultCards = (filteredResults) => {
         //     release_date: release_date,
         //     imdbvotes: imdbVotes,
         // };
-        let year = parseInt(release_date.split("-")[0]);
+        if (release_date) {
+            var year = parseInt(release_date.split("-")[0]);
+        }
 
         if (poster_path) {
             var imgsrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
@@ -200,6 +202,9 @@ const populateSearchResultCards = (filteredResults) => {
             <div class="w-full h-4/6 bg-cover bg-center bg-no-repeat" style="background-image: url('${imgsrc}')">
             </div>`;
         }
+
+        overview = overview.replace(/"/g, `\'`);
+        // str.replace(/"/g, '\\"');
 
         cards_innerhtml += `
             <a
