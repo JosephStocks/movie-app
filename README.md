@@ -115,5 +115,5 @@ router.post("/watchlist", async (req, res) => {
 **Developer Team**
 
 - Joe Stocks: 
-- Jacob Deel: 
+- Jacob Deel: UX, Design, Responsiveness
 - Ian Haddock: Login, Registration, and Saving Cards to list. 

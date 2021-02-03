@@ -15,7 +15,7 @@
         
     <%- include ('partials/navbar.ejs') %> 
 
-    <div class="text-white text-center">Top 100 List | ID: <%= genreid %> </div>
+    <div class="text-violet-500 font-mono text-center">Top 100 <%= genreid %> Movies  </div>
 
     <div class="grid grid-cols-2 gap-6 gap-y-4 px-24 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 grid-flow-row sm:gap-6 lg:gap-6 xl:gap-6 md:gap-6 md:px-32 xl:px-32 2xl:px-56 auto-rows-fr p-6 sm:px-8">
         <% movieArr.forEach(movie => { %>
