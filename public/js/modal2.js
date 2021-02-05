@@ -118,22 +118,22 @@ const addGridEventListener = () => {
                                     </svg>
                                 </div>
                             </div>
+
+                            <!--Body-->
+                            <div class="mb-5">Rated ${rated}</div>
+                            <div class="mb-5">${synopsis}</div>
+                            <div>Rotten Tomatoes: ${rottentom}</div>
+                            <div>MetaCritic: ${metacritic}</div>
+                            <div>IMDB: ${imdb}</div>
+            
+                            <!--Footer-->
+                            <div class="footer flex justify-end pt-2">
+                                <button onClick="addToWatchList(${id})" class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add To Watchlist</button>
+                                <button onClick="addToSeenList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Seen</button>
+                                <button onClick="addToFavoriteList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Favorite</button>
+                                <button class="modal-close px-1 bg-indigo-500 p-1 rounded-lg text-white hover:bg-indigo-400">Close</button>
+                            </div> 
                         </div>
-        
-                        <!--Body-->
-                        <div class="mb-5">Rated ${rated}</div>
-                        <div class="mb-5">${synopsis}</div>
-                        <div>Rotten Tomatoes: ${rottentom}</div>
-                        <div>MetaCritic: ${metacritic}</div>
-                        <div>IMDB: ${imdb}</div>
-        
-                        <!--Footer-->
-                        <div class="footer flex justify-end pt-2">
-                            <button onClick="addToWatchList(${id})" class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add To Watchlist</button>
-                            <button onClick="addToSeenList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Seen</button>
-                            <button onClick="addToFavoriteList(${id})"  class="px-2 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">Add to Favorite</button>
-                            <button class="modal-close px-1 bg-indigo-500 p-1 rounded-lg text-white hover:bg-indigo-400">Close</button>
-                        </div> 
                     </div>
                     `;
 
