@@ -60,19 +60,19 @@ grid.addEventListener("click", (event) => {
                             </svg>
                         </div>
                     </div>
+
+                    <!--Body-->
+                    <div class="mb-5">Rated ${rated}</div>
+                    <div class="mb-5">${synopsis}</div>
+                    <div>Rotten Tomatoes: ${rottentom}</div>
+                    <div>MetaCritic: ${metacritic}</div>
+                    <div>IMDB: ${imdb}</div>
+    
+                    <!--Footer-->
+                    <div class="footer flex justify-end pt-2">
+                        <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Close</button>
+                    </div> 
                 </div>
-
-                <!--Body-->
-                <div class="mb-5">Rated ${rated}</div>
-                <div class="mb-5">${synopsis}</div>
-                <div>Rotten Tomatoes: ${rottentom}</div>
-                <div>MetaCritic: ${metacritic}</div>
-                <div>IMDB: ${imdb}</div>
-
-                <!--Footer-->
-                <div class="footer flex justify-end pt-2">
-                    <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Close</button>
-                </div> 
             </div>
             `;
 
