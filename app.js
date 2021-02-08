@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const helmet = require("helmet");
-const PORT = process.argv[2] || 3000;
+const PORT = process.env.PORT || 3000;
 const cookieParser = require("cookie-parser");
 
 //bodyParser
