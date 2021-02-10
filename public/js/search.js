@@ -48,7 +48,7 @@ form.addEventListener("submit", async (e) => {
         let imdb_id = movie.imdb_id;
         console.log(imdb_id);
         let response = await fetch(
-            `http://private.omdbapi.com/?i=${imdb_id}&apikey=9a14bb73`
+            `https://private.omdbapi.com/?i=${imdb_id}&apikey=9a14bb73`
         );
         let result = await response.json();
         moviesArr[index] = {
