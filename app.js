@@ -3,6 +3,7 @@ const app = express();
 const helmet = require("helmet");
 const PORT = process.env.PORT || 3000;
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
 //bodyParser
 app.use(express.urlencoded({ extended: false }));
@@ -26,7 +27,7 @@ app.use(
 app.set("view engine", "ejs");
 
 //static
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cookieParser());
 
